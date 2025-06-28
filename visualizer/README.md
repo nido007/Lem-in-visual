@@ -161,22 +161,35 @@ lem-in/
 
 ## Testing
 
-Run the unit tests with:
+### Run Unit Tests
 ```bash
-go test
+go test -v
 ```
 
-Test the core program:
+### Test Core Program
 ```bash
+# Build first
+go build -o lem-in
+
+# Test with different files
 ./lem-in example.txt
 ./lem-in complex_test.txt
 ```
 
-Test the visualizer:
+### Test Bonus Visualizer
 ```bash
+# Build visualizer
+cd visualizer && go build -o visualizer && cd ..
+
+# Test visualization
 ./lem-in example.txt | ./visualizer/visualizer
 ./lem-in complex_test.txt | ./visualizer/visualizer
 ```
+
+### Common Issues
+- **File not found**: Make sure to build with `go build -o lem-in`
+- **Tests failing**: Check that room names don't start with 'L' or '#'
+- **Visualizer not working**: Ensure both programs are built and pipe syntax is correct
 
 ## Technical Implementation Details
 
@@ -203,7 +216,7 @@ Test the visualizer:
 
 ```bash
 # 1. Clone the repository
-git clone <repository-url>
+git clone https://learn.01founders.co/git/pbordean/lem-in.git
 cd lem-in
 
 # 2. Build both programs
@@ -215,6 +228,9 @@ cd visualizer && go build -o visualizer && cd ..
 
 # 4. Test bonus visualizer
 ./lem-in example.txt | ./visualizer/visualizer
+
+# 5. Run tests
+go test -v
 ```
 
 ## Branch Information
