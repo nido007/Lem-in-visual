@@ -1,3 +1,6 @@
 PROJECT_NOTES.md
 *.private
 personal_notes/
+lem-in
+*.exe
+*.out
